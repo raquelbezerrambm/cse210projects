@@ -7,7 +7,7 @@ class Program
     {
         // Using a Random Generator
         Random randomGenerator = new Random();
-        int magicNumber = randomGenerator.Next(1,1001);
+        int magicNumber = randomGenerator.Next(1,101);
 
         int guessedNumber = -1;
 
