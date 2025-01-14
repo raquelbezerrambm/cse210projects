@@ -7,9 +7,11 @@ public class Job
     public int _endYear;
 
     // Behaviors: Displays the job information in the format "Job Title (Company) StartYear-EndYear"
-    public void JobInformation()
+    public void DisplayJobDetails()
     {
         Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
     }
+
+    
 }
 
