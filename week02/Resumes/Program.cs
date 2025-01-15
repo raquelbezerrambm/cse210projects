@@ -4,8 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Resumes Project.");
-
         Job job1 = new Job();
         job1._company = "Meta";
         job1._jobTitle = "Software Engineer";
@@ -17,8 +15,12 @@ class Program
         job2._jobTitle = "Data Analyst";
         job2._startYear = 2022;
         job2._endYear = 2024;
-        
-        job1.DisplayJobDetails();
-        job2.DisplayJobDetails();
+
+        Resume resume = new Resume();
+        resume._name = "Anne Angels";
+        resume._jobs.Add(job1);
+        resume._jobs.Add(job2);
+
+        resume.DisplayResumeDetails();
     }
 }
