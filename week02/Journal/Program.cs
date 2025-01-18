@@ -7,11 +7,14 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("Hello World! Welcome to the Journal Program!");
+
         List<Entry> entries = new List<Entry>();
         int choiceInt = 0;
+
         do
         {
-            Console.WriteLine("Hello World! Welcome to the Journal Program!");
+            
             Console.WriteLine("");
             Console.WriteLine("Please select one of the following choices:");
             Console.WriteLine("1. Write");
