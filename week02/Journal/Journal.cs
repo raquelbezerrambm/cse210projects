@@ -2,9 +2,9 @@ public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
 
-    public void AddEntry(Entry[] newEntry)
+    public void AddEntry(Entry newEntry)
     {
-        // Add code here
+        _entries.Add(newEntry);
     }
 
     public void DisplayAll()
