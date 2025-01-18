@@ -1,3 +1,7 @@
+using System.IO;
+using System;
+using System.Text.Json;
+
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
@@ -9,16 +13,33 @@ public class Journal
 
     public void DisplayAll()
     {
-        // Add code here
+        foreach (Entry entry in _entries)
+        {
+            entry.Display();
+        }
     }
 
-    public void SaveToFile(string[] file)
+    public void SaveToFile(string filename)
     {
-        // Add code here
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true
+        };
+
+        string json = JsonSerializer.Serialize(_entries, options);
+        File.WriteAllText(filename, json);
+
+        Console.WriteLine($"Your Journal was saved successfully in {filename}");
     }
 
-    public void LoadFromFile(string[] file)
+    public void LoadFromFile(string filename)
     {
-        // Add code here
+        string[] lines = System.IO.File.ReadAllLines(filename);
+
+        foreach (string line in lines)
+        {
+            string[] entries = line.Split("|");
+            // Voltar aqui para terminar
+        }
     }
 }

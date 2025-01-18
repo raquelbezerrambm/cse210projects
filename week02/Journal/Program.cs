@@ -3,7 +3,8 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
 using Microsoft.Win32.SafeHandles;
-using System.IO; 
+using System.IO;
+using System.Text.Json; 
 
 class Program
 {
@@ -60,7 +61,7 @@ class Program
                 // Add code here to display what is in a file
                 if (nameOfFile != "")
                 {
-                    // Call DisplayAll() from Journal
+                    journal.DisplayAll();
                 }
             }
 
@@ -74,6 +75,7 @@ class Program
                 Console.WriteLine("What is the name of the file?");
                 string filename = Console.ReadLine();
                 nameOfFile = filename;
+                journal.SaveToFile(nameOfFile);
             }
         } while (choiceInt != 5);
     }

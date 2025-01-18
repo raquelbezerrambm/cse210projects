@@ -1,0 +1,12 @@
+[
+  {
+    "_date": "18-jan.-25",
+    "_promptText": "How did I see the hand of the Lord in my life today?",
+    "_entryText": "when I finished my homework"
+  },
+  {
+    "_date": "18-jan.-25",
+    "_promptText": "If today was a color, which one would it be?",
+    "_entryText": "black and white"
+  }
+]
