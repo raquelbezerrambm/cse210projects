@@ -39,8 +39,7 @@ class Program
                 Console.WriteLine(entry._promptText);
                 Console.Write("> ");
                 string entryText = Console.ReadLine();
-
-                
+  
                 entry._entryText = entryText;
                 
                 DateTime now = DateTime.Now;

@@ -31,9 +31,7 @@ public class Journal
                 string entryText = entry._entryText;
 
                 // You can use the $ and include variables just like with Console.WriteLine
-                outputFile.WriteLine($"Date: {date}|Prompt Text: {promptText}|{entryText}|");
-
-                
+                outputFile.WriteLine($"Date: {date}|Prompt Text: {promptText}|{entryText}|"); 
             }
         }
         // Message to say that it was successfully saved :)
