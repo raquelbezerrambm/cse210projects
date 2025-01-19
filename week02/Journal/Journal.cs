@@ -21,14 +21,22 @@ public class Journal
 
     public void SaveToFile(string filename)
     {
-        var options = new JsonSerializerOptions
+        foreach (Entry entry in _entries)
         {
-            WriteIndented = true
-        };
+            using (StreamWriter outputFile = new StreamWriter(filename, append:true))
+            {
+                // Turning the entry attributes into strings
+                string date = entry._date;
+                string promptText = entry._promptText;
+                string entryText = entry._entryText;
 
-        string json = JsonSerializer.Serialize(_entries, options);
-        File.WriteAllText(filename, json);
+                // You can use the $ and include variables just like with Console.WriteLine
+                outputFile.WriteLine($"Date: {date}|Prompt Text: {promptText}|{entryText}|");
 
+                
+            }
+        }
+        // Message to say that it was successfully saved :)
         Console.WriteLine($"Your Journal was saved successfully in {filename}");
     }
 
@@ -39,7 +47,20 @@ public class Journal
         foreach (string line in lines)
         {
             string[] entries = line.Split("|");
-            // Voltar aqui para terminar
+
+            string date = entries[0];
+            string promptText = entries[1];
+            string entryText = entries[2];
+
+            Entry entry = new Entry();
+            entry._date = date;
+            entry._promptText = promptText;
+            entry._entryText = entryText;
+
+            _entries.Add(entry);
         }
+
+        // Successful message :)
+        Console.WriteLine($"The file {filename} was successfully loaded.");
     }
 }

@@ -57,17 +57,14 @@ class Program
                 {
                     entry.Display();
                 }
-                
-                // Add code here to display what is in a file
-                if (nameOfFile != "")
-                {
-                    journal.DisplayAll();
-                }
             }
 
             if (choiceInt == 3)
             {
-
+                Console.WriteLine("What is the name of the file?");
+                string filename = Console.ReadLine();
+                nameOfFile = filename;
+                journal.LoadFromFile(nameOfFile);
             }
 
             if (choiceInt == 4)
